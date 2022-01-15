@@ -73,30 +73,7 @@ def search_by_es(es_dic):
     return  json.loads(search_response.text)
 
 
-def get_date_data_from_mysql(date_str):
-    """
-    Given the date str format ,return the data frame consist of of (id,text)
-    :param date_str: exp:"2021-12-22"
-    :return: (id,text) data frame
-    """
-    db_connection_str = 'mysql+pymysql://admin:fts970914@database-1.cm4w5eqwv8zj.us-east-1.rds.amazonaws.com/covid'
-    db_connection = create_engine(db_connection_str)
-    search_sql = """
-        select tc.id as id, date(tc.created_at) as date ,ct.cleaned_text as text,tc.likes as likes
-        from  twitter_covid as tc
-        left join covid_text as ct
-        on tc.id = ct.id
-        where date(tc.created_at)= %(date)s
-        and tc.likes > 10 
 
-
-    """
-    df = pd.read_sql(search_sql,
-                     con=db_connection,
-                     params={"date": date_str},
-                     )
-    df["date"] = date_str
-    return df
 
 
 def df_to_jsons(df):
