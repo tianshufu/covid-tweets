@@ -5,8 +5,8 @@ from sqlalchemy import create_engine
 import pandas as pd
 import time
 
-user_name = "admin"
-password = "Fts970914+123"
+user_name = st.secrets["es_db_username"]
+password = st.secrets["es_db_password"]
 search_url = "https://search-twitter-covid-data-gmgce6zcfpiv44xe5e3b6cxzcu.us-east-1.es.amazonaws.com/movies/_search?q=mars&pretty=true"
 # response = requests.get(
 #   search_url,
