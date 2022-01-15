@@ -4,6 +4,7 @@ import json
 from sqlalchemy import create_engine
 import pandas as pd
 import time
+import streamlit as st
 
 user_name = st.secrets["es_db_username"]
 password = st.secrets["es_db_password"]
