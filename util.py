@@ -33,8 +33,8 @@ def highlight_target_ch(text,target):
 
 
 def get_session():
-    user_name = 'covid-project-at-497279986324'
-    user_password = '51Q5zchFzauzbANpkyIPVW0aYDZ0gM2Ik5QAp5l13IA='
+    user_name = st.secrets["cassandra"]["db_username"]
+    user_password =  st.secrets["cassandra"]["db_password"]
     ssl_context = SSLContext(PROTOCOL_TLSv1_2)
     ssl_context.load_verify_locations('sf-class2-root.crt')
     ssl_context.verify_mode = CERT_REQUIRED
