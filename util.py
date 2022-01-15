@@ -4,6 +4,7 @@ from cassandra.policies import WhiteListRoundRobinPolicy, DowngradingConsistency
 from cassandra.auth import PlainTextAuthProvider
 from sqlalchemy import create_engine
 import pandas as pd
+import streamlit as st
 
 
 def highlight_target_ch(text,target):
