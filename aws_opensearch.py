@@ -6,8 +6,8 @@ import pandas as pd
 import time
 import streamlit as st
 
-user_name = st.secrets["es_db_username"]
-password = st.secrets["es_db_password"]
+user_name = st.secrets["db_username"]
+password = st.secrets["db_password"]
 search_url = "https://search-twitter-covid-data-gmgce6zcfpiv44xe5e3b6cxzcu.us-east-1.es.amazonaws.com/movies/_search?q=mars&pretty=true"
 # response = requests.get(
 #   search_url,
